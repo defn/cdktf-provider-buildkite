@@ -27,4 +27,4 @@ build:
 publish:
     FROM +warm
     COPY dist .
-    RUN ~/bin/e poetry publish
+    RUN --secret POETRY_PYPI_TOKEN_PYPI ~/bin/e poetry publish
