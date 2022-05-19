@@ -13,7 +13,18 @@ update:
     RUN ~/bin/e poetry update
     SAVE ARTIFACT poetry.lock AS LOCAL poetry.lock
 
-imports:
+get:
     FROM +warm
     RUN ~/bin/e cdktf get
-    SAVE ARTIFACT .gen AS LOCAL imports
+    SAVE ARTIFACT .gen AS LOCAL src/defn_cdktf_provider_buildkite
+
+build:
+    FROM +warm
+    COPY src .
+    RUN ~/bin/e poetry build
+    SAVE ARTIFACT dist AS LOCAL dist
+
+publish:
+    FROM +warm
+    COPY dist .
+    RUN ~/bin/e poetry publish
