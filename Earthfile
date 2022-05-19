@@ -14,11 +14,6 @@ update:
     RUN ~/bin/e poetry update
     SAVE ARTIFACT poetry.lock AS LOCAL poetry.lock
 
-get:
-    FROM +warm
-    RUN ~/bin/e cdktf get
-    SAVE ARTIFACT .gen AS LOCAL src/defn_cdktf_provider_buildkite
-
 build:
     FROM +warm
     COPY src src
@@ -29,3 +24,9 @@ publish:
     FROM +warm
     COPY dist dist
     RUN --push --secret POETRY_PYPI_TOKEN_PYPI ~/bin/e poetry publish
+
+get:
+    FROM +warm
+    RUN ~/bin/e cdktf get
+    SAVE ARTIFACT .gen AS LOCAL src/defn_cdktf_provider_buildkite
+

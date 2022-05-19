@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 test:
 	pre-commit
-	earthly +image
+	earthly +build
