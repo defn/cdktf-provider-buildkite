@@ -9,6 +9,7 @@ warm:
     RUN ~/bin/e poetry install
 
 update:
+    FROM +warm
     COPY cdktf.json pyproject.toml poetry.lock .
     RUN ~/bin/e poetry update
     SAVE ARTIFACT poetry.lock AS LOCAL poetry.lock
