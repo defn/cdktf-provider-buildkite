@@ -28,5 +28,4 @@ build:
 publish:
     FROM +warm
     COPY dist dist
-    RUN rm -f ~/keyringrc.cfg
     RUN --push --secret POETRY_PYPI_TOKEN_PYPI ~/bin/e poetry publish
