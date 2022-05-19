@@ -1,0 +1,1 @@
+{ "language": "python", "app": "poetry run python -m main" }

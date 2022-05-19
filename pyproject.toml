@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "defn-template"
+name = "defn-cdktf-provider-buildkite"
 version = "0.4.0"
 description = ""
 authors = ["Amanibhavam <iam@defn.sh>"]
@@ -8,7 +8,6 @@ authors = ["Amanibhavam <iam@defn.sh>"]
 python = "^3.8"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
