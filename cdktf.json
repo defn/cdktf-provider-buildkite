@@ -1,1 +1,5 @@
-{ "language": "python", "app": "poetry run python -m main" }
+{
+  "language": "python",
+  "app": "poetry run python -m main",
+  "terraformProviders": ["buildkite@~> 0.9.0"]
+}
