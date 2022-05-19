@@ -21,11 +21,11 @@ get:
 
 build:
     FROM +warm
-    COPY src .
+    COPY src src
     RUN ~/bin/e poetry build
     SAVE ARTIFACT dist AS LOCAL dist
 
 publish:
     FROM +warm
-    COPY dist .
-    RUN --secret POETRY_PYPI_TOKEN_PYPI ~/bin/e poetry publish
+    COPY dist dist
+    RUN --push --secret POETRY_PYPI_TOKEN_PYPI ~/bin/e poetry publish
